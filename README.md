@@ -32,5 +32,5 @@ Introduction
    * cd astr8300_rappture
    * export PATH=$PATH:/usr/local/rappture/bin/
    * rappture
-3. Modify README.md ([Markdown doc] (https://guides.github.com/features/mastering-markdown/))
+3. Modify README.md ([Markdown doc](https://guides.github.com/features/mastering-markdown/))
 
