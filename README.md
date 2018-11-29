@@ -38,9 +38,9 @@ Let's try some html stuff
 =========================
 The following text is taken from [Wikipedia](https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law):
 
-"<p style="color:blue;">The <b>Stefan–Boltzmann law</b> describes the power radiated from a <i>black body</i> in terms of its <b><i>temperature</i></b>. The law states that the total energy radiated per unit surface area of a black body across all wavelengths per unit time is directly proportional to the fourth power of the black body's thermodynamic temperature T:</p><br>
+"<p style="color:Tomato;">The <b>Stefan–Boltzmann law</b> describes the power radiated from a <i>black body</i> in terms of its <b><i>temperature</i></b>. The law states that the total energy radiated per unit surface area of a black body across all wavelengths per unit time is directly proportional to the fourth power of the black body's thermodynamic temperature T:</p><br>
   <i>j</i><sup> &star;</sup>=&sigma;<i>T</i><sup>4</sup><br>
  The constant of proportionality σ, called the Stefan–Boltzmann constant, is derived from other known physical constants. The value of the constant is:<br>
-  <p style="font-family:verdana;">&sigma;=2&pi;<sup>5</sup><i>k</i><sup>4</sup><over>15<i>c</i><sup>2</sup><i>h</i><sup>3</sup>=5.670373X10<sup>-8</sup> W m<sup>-2</sup> K<sup>-4</sup></p>"
+  <h1 style="font-family:verdana;">&sigma;=2&pi;<sup>5</sup><i>k</i><sup>4</sup><over>15<i>c</i><sup>2</sup><i>h</i><sup>3</sup>=5.670373X10<sup>-8</sup> W m<sup>-2</sup> K<sup>-4</sup></h1>"
   
  
