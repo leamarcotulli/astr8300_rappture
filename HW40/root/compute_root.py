@@ -1,8 +1,23 @@
-import argparse
+import Rappture
+import sys
+from math import *
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy.integrate import odeint
 from scipy import optimize
+#from matplotlib import rc, rcParams
+
+#rc('text',usetex=True)
+##rc('axes', linewidth=2)
+#rc('font', weight='bold')
+#rc('font',**{'family':'serif','serif':['Computer Modern']})
+#rcParams['text.latex.preamble'] = [r'\boldmath']
+
+
+#import argparse
+#import numpy as np
+#import matplotlib.pyplot as plt
+#from scipy.integrate import odeint
+#from scipy import optimize
 
 def f(y, x, b, formula):
     return eval(formula)
@@ -12,43 +27,33 @@ def calc(x, a, formula):
     return y[1]  # y[0] is int f(x) from 0 to 0
 
 def main():
+    io = Rappture.library(sys.argv[1])
 
-    # Get arguments
+    xmin = float(io.get('input.number(min).current'))
+    xmax = float(io.get('input.number(max).current'))
+    a = float(io.get('input.number(a).current'))
+    formula = io.get('input.string(formula).current')
 
-    parser = argparse.ArgumentParser(description='Find root')
+    #my_str_base = 'int_0^root (' + formula + ') dx - ' + str(a)
+    my_str_base = 'int_0^root (' + formula + ') dx - ' + str(a)
 
-    parser.add_argument('formula', type=str, help='f(x)')
 
-    parser.add_argument('--xmin', type=float, default = 0, help='min x')
+    #root = optimize.brentq(f, xmin, xmax, args=(formula,))
+    root = optimize.brentq(calc, xmin, xmax, args=(a, formula))
+    my_str = '\nRoot of ' + my_str_base +  ' in [' + str(xmin) + \
+            ', ' + str(xmax) + '] is ' + str(root)
 
-    parser.add_argument('--xmax', type=float, default = 100, help='max x')
+    io.put('output.string(result2).about.label', 'Root')
+    io.put('output.string(result2).current', my_str)
 
-    parser.add_argument('--a', type=float, default = 10, help='a')
-
-    args = parser.parse_args()
-
-    # Get base string
-
-    my_str_base = 'int_0^root (' + args.formula + ') dx - ' + str(args.a)
-
-    # Get compute root of \int_0^x f(x') dx' - a
-
-    root = optimize.brentq(
-               calc, args.xmin, args.xmax, args=(args.a, args.formula)
-           )
-
-    my_str = '\nRoot of ' + my_str_base +  ' in [' + str(args.xmin) + \
-            ', ' + str(args.xmax) + '] is ' + str(root)
-
-    print(my_str)
-
-    # Check
-
-    check = calc(root, args.a, args.formula)
+    check = calc(root, a, formula)
 
     my_str2 = '\nCheck: ' + my_str_base + ' = ' + str(check[0])
 
-    print(my_str2 + '\n')
+    io.put('output.string(result3).about.label', 'Check')
+    io.put('output.string(result3).current', my_str2)
+
+    Rappture.result(io)
 
 if __name__ == "__main__":
     main()
