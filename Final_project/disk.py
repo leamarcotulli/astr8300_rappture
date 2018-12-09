@@ -160,7 +160,7 @@ def main():
     for i in range(len(x_s)):
         io.put(
                'output.curve(result2).component.xy',
-               '%g %g\n' % (x_s[i],y_s[i]), append=1
+               '%g %g\n' % (z_s[i],y_s[i]), append=1
               ) 
     for i in range(len(x_s)):
         io.put(
