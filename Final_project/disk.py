@@ -91,7 +91,7 @@ def main():
     io.put('output.curve(result1).yaxis.label','H(pc)')
     io.put('output.curve(result1).xaxis.label','M')
 
-    io.put('output.curve(result2).about.label','Vertical Density vs x',append=0)
+    io.put('output.curve(result2).about.label','Vertical Density vs z',append=0)
     io.put('output.curve(result2).yaxis.label','rho_v')
     io.put('output.curve(result2).xaxis.label','z (kpc)')
     io.put('output.curve(result2).about.type', 'scatter')
