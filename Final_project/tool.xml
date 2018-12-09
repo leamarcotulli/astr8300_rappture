@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<run>
+    <tool>
+        <title>Bahcall-Soneira model</title>
+        <about>Press Simulate to view results.</about>
+	<command>python @tool/disk.py @driver</command>
+    </tool>
+    <input>
+        <number id="M_min">
+            <about>
+		<label>Minimum Magnitude </label>
+		<description>This is the starting point.</description>
+	    </about>
+            <default>-8</default>
+        </number>
+        <number id="M_max">
+	    <about>
+	  	<label>Maximum Magnitude</label>
+		<description>This is the ending point</description>
+	    </about>
+            <default>18</default>
+        </number>
+        <number id="M">
+	    <about>
+	  	<label>Single Magnitude</label>
+		<description>This is the one you want to compute z vs x</description>
+	    </about>
+            <default>3</default>
+        </number>
+        <number id="Npts">
+            <about>
+		<label>Npts</label>
+		<description>Number of points to divide coord and magnitude</description>
+	    </about>
+            <default>10</default>
+        </number>
+    </input>
+</run>
