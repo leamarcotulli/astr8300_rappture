@@ -84,27 +84,34 @@ def main():
     
     io.put('output.curve(result0).about.label','phi(M) vs M',append=0)
     io.put('output.curve(result0).yaxis.label','phi(M)')
+    io.put('output.curve(result0).yaxis.scale','log')
     io.put('output.curve(result0).xaxis.label','M')
 
     io.put('output.curve(result1).about.label','Scale height (H) vs M',append=0)
     io.put('output.curve(result1).yaxis.label','H(pc)')
     io.put('output.curve(result1).xaxis.label','M')
 
-    io.put('output.curve(result2).about.label','Vertical Density vs z',append=0)
+    io.put('output.curve(result2).about.label','Vertical Density vs x',append=0)
     io.put('output.curve(result2).yaxis.label','rho_v')
     io.put('output.curve(result2).xaxis.label','z (kpc)')
+    io.put('output.curve(result2).about.type', 'scatter')
+    io.put('output.curve(result2).yaxis.scale','log')
 
     io.put('output.curve(result3).about.label','Horizontal Density vs. x',append=0)
     io.put('output.curve(result3).yaxis.label','rho_h')
+    io.put('output.curve(result3).about.type', 'scatter')
     io.put('output.curve(result3).xaxis.label','x (kpc)')
+
 
     io.put('output.curve(result4).about.label','Spheroidal Density vs. r',append=0)
     io.put('output.curve(result4).yaxis.label','rho_s')
     io.put('output.curve(result4).xaxis.label','r (kpc)')
+    io.put('output.curve(result4).about.type', 'scatter')
 
     io.put('output.curve(result5).about.label','z vs x',append=0)
-    io.put('output.curve(result5).yaxis.label','z')
-    io.put('output.curve(result5).xaxis.label','x')
+    io.put('output.curve(result5).yaxis.label','z (kpc)')
+    io.put('output.curve(result5).xaxis.label','x (kpc)')
+    io.put('output.curve(result5).about.type', 'scatter')
 
     #plot luminosity fct
     res=[]
@@ -120,11 +127,12 @@ def main():
                'output.curve(result0).component.xy',
                '%g %g\n' % (M_lum[i],res[i]), append=1
               )
+
     #plot scale height
     for i in range(len(M_lum)):
         io.put(
                'output.curve(result1).component.xy',
-               '%g %g\n' % (M_lum[i],H(M[i])), append=1
+               '%g %g\n' % (M_lum[i],H(M_lum[i])), append=1
               )    
     #plot z vs x
     
@@ -149,22 +157,22 @@ def main():
                        r_s.append(r(x(R[i], b[k], l[s]), z(R[i], b[k])))
                        s_s.append(dens_spher(x(R[i], b[k], l[s]),z(R[i], b[k])))
                        root_s.append(root)
-    for i in range(x_s):
+    for i in range(len(x_s)):
         io.put(
                'output.curve(result2).component.xy',
                '%g %g\n' % (x_s[i],y_s[i]), append=1
               ) 
-    for i in range(x_s):
+    for i in range(len(x_s)):
         io.put(
                'output.curve(result3).component.xy',
                '%g %g\n' % (x_s[i],z_s[i]), append=1
               ) 
-    for i in range(r_s):
+    for i in range(len(r_s)):
         io.put(
                'output.curve(result4).component.xy',
                '%g %g\n' % (r_s[i],s_s[i]), append=1
               ) 
-    for i in range(x_s):
+    for i in range(len(x_s)):
         io.put(
                'output.curve(result5).component.xy',
                '%g %g\n' % (x_s[i],root_s[i]), append=1
