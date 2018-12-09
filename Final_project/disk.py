@@ -41,9 +41,6 @@ plt.savefig('lum_fct.pdf')
 
 #------------------ DISK ----------------#
 
-h=3.5 #kpc
-r0=8. #kpc
-
 def H(M):
     if M<3:
         return 100.
@@ -62,7 +59,22 @@ plt.ylabel('H(pc)')
 #plt.show()
 plt.savefig('scale_height.pdf')
 
+h=3.5 #kpc
+r0=8. #kpc
+r_e=r0/3. #kpc
+b0=7.669
 
+
+def x(R, b, l):
+    return (r0**2+R**2*np.cos(b)**2+2*R*r0*np.cos(b)*np.cos(l))**0.5
+
+def z(R,b):
+    return R*np.sin(b)
+
+def r(x,z):
+    y = (x**2+z**2)**0.5
+    if y/r_e>=0.2:z
+        return y
 
 def dens_perp(z,M):
     return np.exp(-z/H(M))
@@ -70,26 +82,46 @@ def dens_perp(z,M):
 def dens_parall(x):
     return np.exp(-(x-r0)/h)
 
+def dens_spher(r):
+    return np.exp(-b0*(r(x,z)/r_e)**(1./4.))/(r(x,z)/r_e)**(7./8.)
+
+
 def dens(z, M, x):
-    return np.exp(-z/H(M)-(x-r0)/h)
+    return np.exp(-z/H(M)-(x-r0)/h)+np.exp(-b0*(r(x,z)/r_e)**(1./4.))/(r(x,z)/r_e)**(7./8.)
 
-def f (z, x, M):
-    return quad(dens, 0, z, args=(M, x))[0]/quad(dens, 0, inf, args=(M, x))[0] - 0.90
+#def f (z, x, M):
+#    return quad(dens, 0, z, args=(M, x))[0]/quad(dens, 0, inf, args=(M, x))[0] - 0.90
 
+def f1 (z, x, M):
+    return dens(z, M, x) - 0.90
 
-zmin=80 #pc
-zmax=400 #pc
+b = np.linspace(-np.pi/2.,+np.pi/2., 10)
+l = np.linspace(-np.pi/2.,+np.pi/2., 10) #only from center of Galaxy to Sun (180)
+R = np.linspace(0., 8., 10) # 0 = Sun , 8=galaxy center
+M = np.linspace(2,8, 4)
 
-#M=np.linspace(-8,18)
-
-M = [3, 4, 5]
-
-x = np.linspace(0, 10, 20) #kpc
+zmax=1.e6
 
 for j in range(len(M)):
-    for i in range(len(x)):
-        root = optimize.brentq(f, 0, zmax, args=(x[i], M[j]))
+    root_s=[]
+    x_s=[]
+    y_s=[]
+    for k in range(len(b)):
+        for s in range(len(l)):
+            for i in range(len(R)):
+                x_use = x(R[i], l[s], b[k])
+                if x_use<8.:
+                   root = optimize.brentq(f1, -zmax, zmax, args=(x(R[i], l[s], b[k]), M[j]))
+                   x_s.append(x(R[i], l[s], b[k]))
+                   y_s.append(dens_perp(z(R[i], b[k]), M[j]))
+                   #y_s.append(f1(z(R[i], b[k]), x(R[i], l[s], b[k]), M[j]))
+                   root_s.append(root)
+    #print(root_s, M[j])
+    plt.plot(x_s, root_s, '.', label=str(M[j]))
 
-
+plt.xlabel('x (kpc)')
+plt.ylabel('z (pc)')
+plt.legend()
+plt.show()
 
 
