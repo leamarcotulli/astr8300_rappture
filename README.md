@@ -48,17 +48,19 @@ The model
 
 2. The distribution of stars perpendicular to the plane of the Galaxies changes depending on their luminosity. Younger, more massive and brighter stars are fonud close to the plane, while older, less massive and fainter stars more spread. The observed **scale height** (H) can be modeled by a simple function as a function of M<sub>V</sub>: 
 
-![image](http://www.sciweavers.org/download/Tex2Img_1544553954.jpg)
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544553954.jpg)
 
-3. The star density variation (&rho<sub>d</sub>) as a function of z can be approximated by:
+3. The star density variation in the disk (&rho<sub>d</sub>) as a function of z can be approximated by:
 
-![image](http://www.sciweavers.org/download/Tex2Img_1544554170.jpg)
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544554170.jpg)
 
-4. The star density variation (&rho<sub>d</sub>) as a function of x can be approximated by:
+4. The star density variation in the disk (&rho<sub>d</sub>) as a function of x can be approximated by:
 
-![image](http://www.sciweavers.org/download/Tex2Img_1544554425.jpg)
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544554425.jpg)
 
 
-
+5. Therefore, **&rho<sub>d</sub>** is the product of 3. and 4.:
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544554888.jpg)
+   
  
 
