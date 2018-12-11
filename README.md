@@ -44,6 +44,6 @@ The luminosity function of disk stars (which is the number of stars per pc<sup>3
 
 ![equation](http://bit.ly/2BdMZLJ)
 
-<p>with n<sub>\*</sub>=4.03x10<sup>-3</sup>, M<sup>\*</sup>=+1.28, M<sub>b</sub>=-6, M<sub>d</sub>=+19, &alpha;=0.74, &beta;0.04, 1/&delta;=3.40. </p>
+<p>with n<sub>*</sub>=4.03x10<sup>-3</sup>, M<sup>*</sup>=+1.28, M<sub>b</sub>=-6, M<sub>d</sub>=+19, &alpha;=0.74, &beta;0.04, 1/&delta;=3.40. </p>
 
    
