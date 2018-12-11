@@ -12,32 +12,34 @@ You will need a computer with [rappture](https://nanohub.org/infrastructure/rapp
 * cd astr8300_rappture
 * rappture
 
-Math
-----
-
-Here are some symbols:  &alpha;, &beta;, &gamma;, and &delta;.  And here is a reaction:  <sup>12</sup>C + <sup>4</sup>He &rarr; <sup>16</sup>O + &gamma;.  And here is an equation:  <b>F</b> = m<b>a</b>.
-
 Authors
 -------
 
 - Bradley S. Meyer <mbradle@clemson.edu>
 
-
-
 Bahcall-Soneira models tool
 ===========================
-This is the title of the **final project** for the *Galactic Astronomy* class.
+This tool has been developed for the **final project** for the *Galactic Astronomy* class, taught by prof. Bradley Meyer in Fall 2018, Clemson University.
 
-Introduction
+Istructions
 ------------
 
-1. Fork the astr8300_rappture repository
-2. Connect to an EWS instance with "ssh -i "key" -X ubuntu@..."
-   * Fork the repository
-   * cd astr8300_rappture
+1. Make an account on Amazon AWS
+2. From the EC2 dashboard, click on 'AMIs' and, under the public images, launch the 'webnucleo' one (this instance will have rappture installed.
+3. Connect to the instance with "ssh -i "/path/to/key.pem" -X ubuntu@..."
+   * git clone http://github.com/leamarcotulli/astr8300_rappture_lea_BS.git
+   * cd astr8300_rappture/Final_Project
    * export PATH=$PATH:/usr/local/rappture/bin/
    * rappture
-3. Modify README.md ([Markdown doc](https://guides.github.com/features/mastering-markdown/))
+
+
+Description of the tool
+=========================
+This tool is based on the paper from **Bachall and Soneira** ([1980](http://adsabs.harvard.edu/abs/1980ApJS...44...73B)). 
+The goal of this rappture tool is to compute the distribution of stars of absolute magnitude M as a function of x (distance from the Galactic Center) and z (height above the plane). 
+Below I will highlight the assumption behind the calculation. For a more detailed description, I will refer the user to the actual [paper](http://adsabs.harvard.edu/abs/1980ApJS...44...73B).
+
+
 
 Let's try some html stuff
 =========================
