@@ -42,8 +42,9 @@ The model
 -----------
 The luminosity function of disk stars (which is the number of stars per pc<sup>3</sup> per absolute visual magnitude, M<sub>V</sub> is taken from the analytic function derived in Tremaine, Ostriker and Spitzer ([1975](http://adsabs.harvard.edu/abs/1975ApJ...196..407T)):
 
-![equation](http://www.sciweavers.org/tex2img.php?eq=%5Cphi%28M%29%20%26%3D%20%5Cfrac%7Bn_%2A10%5E%7B%5Cbeta%28M-M%5E%2A%29%7D%7D%7B%5B1%2B10%5E%7B-%28%5Calpha%20-%20%5Cbeta%29%5Cdelta%20%28M-M%5E%2A%29%7D%5D%5E%7B%5Cfrac%7B1%7D%7B%5Cdelta%7D%7D%7D%2C%20%5Cqquad%20M_b%5Cleq%20M%20%5Cleq%2015%2C%5C%5C%0A%26%3D%5Cphi%2815%29%2C%20%20%5Cqquad%2015%5Cleq%20M%20%5Cleq%20M_d%2C%20%5C%5C%0A%26%3D0%2C%20%5Cqquad%20M%5CleqM_b%2C%5Cquad%20%7B%5Crm%20or%20%7D%5Cquad%20M%20%5Cgeq%20M_d.%20&bc=White&fc=Black&im=jpg&fs=12&ff=modern&edit=0)
+![image](http://www.sciweavers.org/download/Tex2Img_1544553247.jpg)
 
 <p>with n<sub>*</sub>=4.03x10<sup>-3</sup>, M<sup>*</sup>=+1.28, M<sub>b</sub>=-6, M<sub>d</sub>=+19, &alpha;=0.74, &beta;=0.04, 1/&delta;=3.40. </p>
 
    
+
