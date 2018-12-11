@@ -49,7 +49,4 @@ The following text is taken from [Wikipedia](https://en.wikipedia.org/wiki/Stefa
   <p><i>j</i><sup> &star;</sup>=&sigma;<i>T</i><sup>4</sup></p>
  <p>The constant of proportionality σ, called the Stefan–Boltzmann constant, is derived from other known physical constants. The value of the constant is:</p>
    <p>&sigma;=2&pi;<sup>5</sup><i>k</i><sup>4</sup>/15<i>c</i><sup>2</sup><i>h</i><sup>3</sup>=5.670373x10<sup>-8</sup> W m<sup>-2</sup> K<sup>-4</sup>"</p>
-  
-  
-![equation](http://www.sciweavers.org/tex2img.php?eq=%5Cphi%28M%29%20%3D%203&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)  
- 
+   
