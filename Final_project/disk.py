@@ -59,12 +59,18 @@ def dens_parall(x):
 def dens_spher(x,z):
     return np.exp(-b0*(r(x,z)/r_e)**(1./4.))/(r(x,z)/r_e)**(7./8.)
 
-def dens(z, M, x):
+def dens1(z, M, x):
     return np.exp(-(z*1.e3)/H(M)-(x-r0)/h)+np.exp(-b0*(r(x,z)/r_e)**(1./4.))/(r(x,z)/r_e)**(7./8.)
+
+def dens0(z, M, x):
+    return np.exp(-(z*1.e3)/H(M)-(x-r0)/h)
 
 #------------FUNCTION TO OPTIMIZE------------------#
 def f1 (z, x, M):
-    return dens(z, M, x) - 0.90
+    return dens1(z, M, x) - 0.90
+def f0 (z, x, M):
+    return dens0(z, M, x) - 0.90
+
 
 
 #-------RAPPTURE-------#
@@ -150,13 +156,23 @@ def main():
                 for i in range(len(R)):
                     x_use = x(R[i], b[k],l[s])
                     if x_use<8.:
-                       root = optimize.brentq(f1, -zmax, zmax, args=(x(R[i], b[k], l[s]), M[j]))
-                       x_s.append(x(R[i], b[k], l[s]))
-                       y_s.append(dens_perp(z(R[i], b[k]), M[j]))
-                       z_s.append(dens_parall(x(R[i], b[k], l[s])))
-                       r_s.append(r(x(R[i], b[k], l[s]), z(R[i], b[k])))
-                       s_s.append(dens_spher(x(R[i], b[k], l[s]),z(R[i], b[k])))
-                       root_s.append(root)
+                        if M[j]>=6.:
+                           root = optimize.brentq(f1, -zmax, zmax, args=(x(R[i], b[k], l[s]), M[j]))
+                           x_s.append(x(R[i], b[k], l[s]))
+                           y_s.append(dens_perp(z(R[i], b[k]), M[j]))
+                           z_s.append(dens_parall(x(R[i], b[k], l[s])))
+                           r_s.append(r(x(R[i], b[k], l[s]), z(R[i], b[k])))
+                           s_s.append(dens_spher(x(R[i], b[k], l[s]),z(R[i], b[k])))
+                           root_s.append(root)
+                        elif M[j]<6:
+                           root = optimize.brentq(f0, -zmax, zmax, args=(x(R[i], b[k], l[s]), M[j]))
+                           x_s.append(x(R[i], b[k], l[s]))
+                           y_s.append(dens_perp(z(R[i], b[k]), M[j]))
+                           z_s.append(dens_parall(x(R[i], b[k], l[s])))
+                           r_s.append(r(x(R[i], b[k], l[s]), z(R[i], b[k])))
+                           s_s.append(0.)
+                           root_s.append(root)
+
     for i in range(len(x_s)):
         io.put(
                'output.curve(result2).component.xy',
