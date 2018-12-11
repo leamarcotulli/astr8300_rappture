@@ -46,9 +46,17 @@ The model
 
 <p>with n<sub>*</sub>=4.03x10<sup>-3</sup>, M<sup>*</sup>=+1.28, M<sub>b</sub>=-6, M<sub>d</sub>=+19, &alpha;=0.74, &beta;=0.04, 1/&delta;=3.40. </p>
 
-2. The distribution of stars perpendicular to the plane of the Galaxies changes depending on their luminosity. Younger, more massive and brighter stars are fonud close to the plane, while older, less massive and fainter stars more spread. The observed scale height (H) can be modeled by a simple function as a function of M<sub>V</sub>: 
+2. The distribution of stars perpendicular to the plane of the Galaxies changes depending on their luminosity. Younger, more massive and brighter stars are fonud close to the plane, while older, less massive and fainter stars more spread. The observed **scale height** (H) can be modeled by a simple function as a function of M<sub>V</sub>: 
 
 ![image](http://www.sciweavers.org/download/Tex2Img_1544553954.jpg)
+
+3. The star density variation (&rho<sub>d</sub>) as a function of z can be approximated by:
+
+![image](http://www.sciweavers.org/download/Tex2Img_1544554170.jpg)
+
+4. The star density variation (&rho<sub>d</sub>) as a function of x can be approximated by:
+
+![image](http://www.sciweavers.org/download/Tex2Img_1544554425.jpg)
 
 
 
