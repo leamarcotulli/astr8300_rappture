@@ -34,7 +34,7 @@ Istructions
 
 Description of the tool
 =========================
-<p>This tool is based on the paper from **Bachall and Soneira** ([1980](http://adsabs.harvard.edu/abs/1980ApJS...44...73B)).</p>
+This tool is based on the paper from **Bachall and Soneira** ([1980](http://adsabs.harvard.edu/abs/1980ApJS...44...73B)).
 <p>The goal of this rappture tool is to compute the distribution of stars of absolute magnitude M as a function of their distance from the Galactic Center (x) and their height above the plane (z).</p>
 <p>Below I will highlight the assumption behind the calculation. For a detailed description of the model, I will refer the user to the actual [paper](http://adsabs.harvard.edu/abs/1980ApJS...44...73B).</p>
 
@@ -57,6 +57,7 @@ The model
 4. The star density variation in the disk (&rho<sub>d</sub>) as a function of x can be approximated by:
 
    ![image](http://www.sciweavers.org/download/Tex2Img_1544555158.jpg)
+   
    where r<sub>0</sub> is the distance of the Sun for the Galactic Center (r<sub>0</sub> = 8 kpc) and h is the scale lenght that varies with morphological type (h=3.5 kpc, De Vaucouleurs and Pence, [1978](http://adsabs.harvard.edu/abs/1978AJ.....83.1163D)).
 
 
@@ -64,7 +65,9 @@ The model
    ![image](http://www.sciweavers.org/download/Tex2Img_1544555770.jpg).
  
 6. As **star density** for the **spheroidal component**, assuming it is made of stars with M<sub>V</sub> > 6, an expansion accurate for r/r<sub>e</sub>>0.2 is:
+
    ![image](http://www.sciweavers.org/download/Tex2Img_1544555621.jpg)
+   
    where b=7.669, C is the normalization constant (taken as 1 for simplicity), r<sub>e</sub> = r<sub>0</sub>/3 (De Vaucouleurs and Buta, [1978](http://adsabs.harvard.edu/abs/1978AJ.....83.1383D)). 
    
 
