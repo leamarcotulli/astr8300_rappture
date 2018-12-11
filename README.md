@@ -52,15 +52,21 @@ The model
 
 3. The star density variation in the disk (&rho<sub>d</sub>) as a function of z can be approximated by:
 
-   ![image](http://www.sciweavers.org/download/Tex2Img_1544554170.jpg)
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544554170.jpg).
 
 4. The star density variation in the disk (&rho<sub>d</sub>) as a function of x can be approximated by:
 
-   ![image](http://www.sciweavers.org/download/Tex2Img_1544554425.jpg)
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544555158.jpg)
+   where r<sub>0</sub> is the distance of the Sun for the Galactic Center (r<sub>0</sub> = 8 kpc) and h is the scale lenght that varies with morphological type (h=3.5 kpc, De Vaucouleurs and Pence, [1978](http://adsabs.harvard.edu/abs/1978AJ.....83.1163D)).
 
 
-5. Therefore, **&rho<sub>d</sub>** is the product of 3. and 4.:
-   ![image](http://www.sciweavers.org/download/Tex2Img_1544554888.jpg)
+5. Therefore, **star density variation in the disk*** &rho;<sub>d</sub> is the product of 3. and 4.:
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544555770.jpg).
+ 
+6. As **star density** for the **spheroidal component**, assuming it is made of stars with M<sub>V</sub> > 6, an expansion accurate for r/r<sub>e</sub>>0.2 is:
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544555621.jpg)
+   where b=7.669, C is the normalization constant (taken as 1 for simplicity), r<sub>e</sub> = r<sub>0</sub>/3 (De Vaucouleurs and Buta, [1978](http://adsabs.harvard.edu/abs/1978AJ.....83.1383D)). 
    
+
  
 
