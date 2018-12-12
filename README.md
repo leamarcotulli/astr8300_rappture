@@ -29,9 +29,9 @@ The model
 -----------
 1. The **luminosity function** of disk stars (i.e. the number of stars per pc<sup>3</sup> per absolute visual magnitude, M<sub>V</sub>) is taken from the analytic function derived in Tremaine, Ostriker and Spitzer ([1975](http://adsabs.harvard.edu/abs/1975ApJ...196..407T)):
 
-![image](https://github.com/leamarcotulli/astr8300_rappture_lea_BS/blob/master/Final_project/lum.jpg) (1)
-
-<p>with n<sub>*</sub>=4.03x10<sup>-3</sup>, M<sup>*</sup>=+1.28, M<sub>b</sub>=-6, M<sub>d</sub>=+19, &alpha;=0.74, &beta;=0.04, 1/&delta;=3.40. </p>
+   ![image](https://github.com/leamarcotulli/astr8300_rappture_lea_BS/blob/master/Final_project/lum.jpg) (1)
+   
+   <p>with n<sub>*</sub>=4.03x10<sup>-3</sup>, M<sup>*</sup>=+1.28, M<sub>b</sub>=-6, M<sub>d</sub>=+19, &alpha;=0.74, &beta;=0.04, 1/&delta;=3.40. </p>
 
 2. The distribution of stars perpendicular to the plane of the Galaxies changes depending on their luminosity. Younger, more massive and brighter stars are found close to the plane, while older, less massive and fainter stars are more spread. The observed **scale height** (H) can be modeled by a trivial function which depends on M<sub>V</sub> (and well agrees with the observations): 
 
