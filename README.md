@@ -39,7 +39,7 @@ The model
 
 3. The star density variation in the disk (&rho;<sub>d</sub><sup>&perp;</sup>) as a function of z can be approximated by:
 
-   ![image](https://github.com/leamarcotulli/astr8300_rappture_lea_BS/blob/master/Final_project/rho_perp.jpg) (3).
+   ![image](https://github.com/leamarcotulli/astr8300_rappture_lea_BS/blob/master/Final_project/rho_perp.jpg) (3)
 
 4. The star density variation in the disk (&rho;<sub>d</sub><sup>&parallel;</sup>) as a function of x can be approximated by:
 
@@ -49,9 +49,10 @@ The model
 
 
 5. Therefore, **star density variation in the disk*** &rho;<sub>d</sub> is the product of 3. and 4.:
-   ![image](https://github.com/leamarcotulli/astr8300_rappture_lea_BS/blob/master/Final_project/rho_d.jpg) (5).
+
+   ![image](https://github.com/leamarcotulli/astr8300_rappture_lea_BS/blob/master/Final_project/rho_d.jpg) (5)
  
-6. As **star density** for the **spheroidal component**, assuming it is made of stars with M<sub>V</sub> > 6, an expansion accurate for r/r<sub>e</sub>>0.2 is:
+6. For the **star density** in the **spheroidal component**, assuming it is made of stars with M<sub>V</sub> > 6, an expansion (valid for r/r<sub>e</sub>>0.2) is:
 
    ![image](https://github.com/leamarcotulli/astr8300_rappture_lea_BS/blob/master/Final_project/rho_s.jpg) (6)
    
