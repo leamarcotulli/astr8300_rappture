@@ -36,11 +36,11 @@ Description of the tool
 =========================
 This tool is based on the paper from **Bachall and Soneira** ([1980](http://adsabs.harvard.edu/abs/1980ApJS...44...73B)).
 <p>The goal of this rappture tool is to compute the distribution of stars of absolute magnitude M as a function of their distance from the Galactic Center (x) and their height above the plane (z).</p>
-Below I will highlight the assumption behind the calculation. For a detailed description of the model, I will refer the user to the actual [paper](http://adsabs.harvard.edu/abs/1980ApJS...44...73B) .
+Below I will highlight the assumption behind the calculation. For a detailed description of the model, I will refer the user to the actual [1980](http://adsabs.harvard.edu/abs/1980ApJS...44...73B) paper.
 
 The model
 -----------
-1. The **luminosity function** of disk stars (which is the number of stars per pc<sup>3</sup> per absolute visual magnitude, M<sub>V</sub>) is taken from the analytic function derived in Tremaine, Ostriker and Spitzer ([1975](http://adsabs.harvard.edu/abs/1975ApJ...196..407T)):
+1. The **luminosity function** of disk stars (i.e. the number of stars per pc<sup>3</sup> per absolute visual magnitude, M<sub>V</sub>) is taken from the analytic function derived in Tremaine, Ostriker and Spitzer ([1975](http://adsabs.harvard.edu/abs/1975ApJ...196..407T)):
 
 ![image](https://github.com/leamarcotulli/astr8300_rappture_lea_BS/blob/master/Final_project/lum.jpg) (1)
 
