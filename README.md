@@ -42,34 +42,59 @@ The model
 -----------
 1. The **luminosity function** of disk stars (which is the number of stars per pc<sup>3</sup> per absolute visual magnitude, M<sub>V</sub>) is taken from the analytic function derived in Tremaine, Ostriker and Spitzer ([1975](http://adsabs.harvard.edu/abs/1975ApJ...196..407T)):
 
-![image](http://www.sciweavers.org/download/Tex2Img_1544553247.jpg)
+![image](http://www.sciweavers.org/download/Tex2Img_1544553247.jpg) (1)
 
 <p>with n<sub>*</sub>=4.03x10<sup>-3</sup>, M<sup>*</sup>=+1.28, M<sub>b</sub>=-6, M<sub>d</sub>=+19, &alpha;=0.74, &beta;=0.04, 1/&delta;=3.40. </p>
 
 2. The distribution of stars perpendicular to the plane of the Galaxies changes depending on their luminosity. Younger, more massive and brighter stars are fonud close to the plane, while older, less massive and fainter stars more spread. The observed **scale height** (H) can be modeled by a simple function as a function of M<sub>V</sub>: 
 
-   ![image](http://www.sciweavers.org/download/Tex2Img_1544553954.jpg)
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544553954.jpg) (2)
 
 3. The star density variation in the disk (&rho<sub>d</sub>) as a function of z can be approximated by:
 
-   ![image](http://www.sciweavers.org/download/Tex2Img_1544554170.jpg).
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544554170.jpg) (3).
 
 4. The star density variation in the disk (&rho<sub>d</sub>) as a function of x can be approximated by:
 
-   ![image](http://www.sciweavers.org/download/Tex2Img_1544555158.jpg)
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544555158.jpg) (4)
    
    where r<sub>0</sub> is the distance of the Sun for the Galactic Center (r<sub>0</sub> = 8 kpc) and h is the scale lenght that varies with morphological type (h=3.5 kpc, De Vaucouleurs and Pence, [1978](http://adsabs.harvard.edu/abs/1978AJ.....83.1163D)).
 
 
 5. Therefore, **star density variation in the disk*** &rho;<sub>d</sub> is the product of 3. and 4.:
-   ![image](http://www.sciweavers.org/download/Tex2Img_1544555770.jpg).
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544555770.jpg) (5).
  
 6. As **star density** for the **spheroidal component**, assuming it is made of stars with M<sub>V</sub> > 6, an expansion accurate for r/r<sub>e</sub>>0.2 is:
 
-   ![image](http://www.sciweavers.org/download/Tex2Img_1544555621.jpg)
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544555621.jpg) (6)
    
-   where b=7.669, C is the normalization constant (taken as 1 for simplicity), r<sub>e</sub> = r<sub>0</sub>/3 (De Vaucouleurs and Buta, [1978](http://adsabs.harvard.edu/abs/1978AJ.....83.1383D)). 
+   where b=7.669, C is the normalization constant (taken as 1 for simplicity), r<sub>e</sub> = r<sub>0</sub>/3 (De Vaucouleurs and Buta, [1978](http://adsabs.harvard.edu/abs/1978AJ.....83.1383D)).
+
+7. Including the spheroidal component, the total distribution of stars in the galaxy is given by: 
    
+ 
+The tool input parameters
+-------------------------
+The input parameters shown in the left of the rappture GUI are:
+    * Minimum (absolute visual) Magnitude (M<sub>MIN</sub>) and Maximum (absolute visual) Magnitude (M<sub>MAX</sub>). These will be used to compute the luminosity function and the scale height.
+    * Single (absolute visual) Magnitude. This is the magnitude for which you want to calculate the density and spatial distribution. 
+    * Npoints (integer). This is the number of points in which you want to divide the coordinate space: longitude (l), latitude (b) and distance from the Sun (R).
+
+ 
+The tool outputs
+---------------
+After you press 'Simulate', the tool will produce six graphs:
+    * The luminosity function, calculated from M<sub>MIN</sub> to M<sub>MAX</sub> using equation (1)
+    * Scale height, calculated from M<sub>MIN</sub> to M<sub>MAX</sub> using equation (2)
+    * &rho;<sub>d</sub><sup>perp</sup> vs. z, calculated using equation (3)
+    * &rho;<sub>d</sub><sup>parall</sup> vs. x, calculated using equation (4)
+    * &rho;<sub>s</sub> vs. r, calculated using equation (5)
+    * 
+The program produces various plots: 1) luminosity function vs M; 2) scale height vs M; 3) vertical density vs. z; 4) horizontal density vs. x; 5) spheroidal density vs. r; 6) optimized z (90% confinement) vs x.
+
+
+
+
 
  
 
