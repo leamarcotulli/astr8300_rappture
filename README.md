@@ -84,6 +84,6 @@ We note that for the last plot we find the root of equations (5) and (6) iterati
 
 Authors
 -------
-- Marcotulli L. <lmarcot@g.clemson.edu>
+- Lea Marcotulli <lmarcot@g.clemson.edu>
 - Bradley S. Meyer <mbradle@clemson.edu>
 
