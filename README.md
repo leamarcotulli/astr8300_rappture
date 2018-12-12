@@ -37,11 +37,11 @@ The model
 
    ![image](https://github.com/leamarcotulli/astr8300_rappture_lea_BS/blob/master/Final_project/scale.jpg) (2)
 
-3. The star density variation in the disk (&rho;<sub>d</sub>) as a function of z can be approximated by:
+3. The star density variation in the disk (&rho;<sub>d</sub><sup>&perp;</sup>) as a function of z can be approximated by:
 
    ![image](https://github.com/leamarcotulli/astr8300_rappture_lea_BS/blob/master/Final_project/rho_perp.jpg) (3).
 
-4. The star density variation in the disk (&rho;<sub>d</sub>) as a function of x can be approximated by:
+4. The star density variation in the disk (&rho;<sub>d</sub><sup>&parallel;</sup>) as a function of x can be approximated by:
 
    ![image](https://github.com/leamarcotulli/astr8300_rappture_lea_BS/blob/master/Final_project/rho_parall.jpg) (4)
    
