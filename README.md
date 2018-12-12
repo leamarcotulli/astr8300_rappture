@@ -93,3 +93,9 @@ After you press 'Simulate', the tool will produce six graphs:
     * &rho;<sub>s</sub> vs. r, calculated findinging the roots of equation (5) is M<6, or (7) is M>6
     
 We note that for the last plot we find the root of equations (5) and (6) iterating for every M and every x over a range [-z<sub>MAX</sub>, +z<sub>MAX</sub>], where z<sub>MAX</sub>=1.e6 (arbitrary choice).
+
+Authors
+-------
+- Marcotulli L. <lmarcot@g.clemson.edu>
+- Bradley S. Meyer <mbradle@clemson.edu>
+
