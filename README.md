@@ -76,9 +76,9 @@ The tool outputs
 After you press 'Simulate', the tool will produce six graphs:
 - The luminosity function, calculated from M<sub>MIN</sub> to M<sub>MAX</sub> using equation (1)
 - Scale height, calculated from M<sub>MIN</sub> to M<sub>MAX</sub> using equation (2)
-- &rho;<sub>d</sub><sup>perp</sup> vs. z, calculated using equation (3)
-- &rho;<sub>d</sub><sup>parall</sup> vs. x, calculated using equation (4)
-- &rho;<sub>s</sub> vs. r, calculated findinging the roots of equation (5) is M<6, or (7) is M>6
+- &rho;<sub>d</sub><sup>perp</sup> vs. z, calculated for stars of magnitude M using equation (3)
+- &rho;<sub>d</sub><sup>parall</sup> vs. x, calculated for stars of magnitude M using equation (4)
+- &rho;<sub>s</sub> vs. r, calculated for stars of magnitude M findinging the roots of equation (5) is M<6, or (7) is M>6
     
 We note that for the last plot we find the root of equations (5) and (6) iterating for every M and every x over a range [-z<sub>MAX</sub>, +z<sub>MAX</sub>], where z<sub>MAX</sub>=1.e6 (arbitrary choice).
 
