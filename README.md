@@ -12,40 +12,89 @@ You will need a computer with [rappture](https://nanohub.org/infrastructure/rapp
 * cd astr8300_rappture
 * rappture
 
-Math
-----
-
-Here are some symbols:  &alpha;, &beta;, &gamma;, and &delta;.  And here is a reaction:  <sup>12</sup>C + <sup>4</sup>He &rarr; <sup>16</sup>O + &gamma;.  And here is an equation:  <b>F</b> = m<b>a</b>.
-
 Authors
 -------
 
 - Bradley S. Meyer <mbradle@clemson.edu>
 
-
-
 Bahcall-Soneira models tool
 ===========================
-This is the title of the **final project** for the *Galactic Astronomy* class.
+This tool has been developed for the **final project** for the *Galactic Astronomy* class, taught by prof. Bradley Meyer in Fall 2018, Clemson University.
 
-Introduction
+Istructions
 ------------
 
-1. Fork the astr8300_rappture repository
-2. Connect to an EWS instance with "ssh -i "key" -X ubuntu@..."
-   * Fork the repository
-   * cd astr8300_rappture
+1. Make an account on Amazon AWS
+2. From the EC2 dashboard, click on 'AMIs' and, under the public images, launch the 'webnucleo' one (this instance will have rappture installed.
+3. Connect to the instance with "ssh -i "/path/to/key.pem" -X ubuntu@..."
+   * git clone http://github.com/leamarcotulli/astr8300_rappture_lea_BS.git
+   * cd astr8300_rappture/Final_Project
    * export PATH=$PATH:/usr/local/rappture/bin/
    * rappture
-3. Modify README.md ([Markdown doc](https://guides.github.com/features/mastering-markdown/))
 
-Let's try some html stuff
+Description of the tool
 =========================
-The following text is taken from [Wikipedia](https://en.wikipedia.org/wiki/Stefan%E2%80%93Boltzmann_law):
+This tool is based on the paper from **Bachall and Soneira** ([1980](http://adsabs.harvard.edu/abs/1980ApJS...44...73B)).
+<p>The goal of this rappture tool is to compute the distribution of stars of absolute magnitude M as a function of their distance from the Galactic Center (x) and their height above the plane (z).</p>
+Below I will highlight the assumption behind the calculation. For a detailed description of the model, I will refer the user to the actual [paper](http://adsabs.harvard.edu/abs/1980ApJS...44...73B) .
 
-<p style="color:Tomato;">"The <b>Stefan–Boltzmann law</b> describes the power radiated from a <i>black body</i> in terms of its <b><i>temperature</i></b>. The law states that <i><ins>the total energy radiated per unit surface area of a black body across all wavelengths per unit time is directly proportional to the fourth power of the black body's thermodynamic temperature T</ins></i>:</p>
-  <p><i>j</i><sup> &star;</sup>=&sigma;<i>T</i><sup>4</sup></p>
- <p>The constant of proportionality σ, called the Stefan–Boltzmann constant, is derived from other known physical constants. The value of the constant is:</p>
-   <p>&sigma;=2&pi;<sup>5</sup><i>k</i><sup>4</sup>/15<i>c</i><sup>2</sup><i>h</i><sup>3</sup>=5.670373x10<sup>-8</sup> W m<sup>-2</sup> K<sup>-4</sup>"</p>
-  
+The model
+-----------
+1. The **luminosity function** of disk stars (which is the number of stars per pc<sup>3</sup> per absolute visual magnitude, M<sub>V</sub>) is taken from the analytic function derived in Tremaine, Ostriker and Spitzer ([1975](http://adsabs.harvard.edu/abs/1975ApJ...196..407T)):
+
+![image](http://www.sciweavers.org/download/Tex2Img_1544553247.jpg) (1)
+
+<p>with n<sub>*</sub>=4.03x10<sup>-3</sup>, M<sup>*</sup>=+1.28, M<sub>b</sub>=-6, M<sub>d</sub>=+19, &alpha;=0.74, &beta;=0.04, 1/&delta;=3.40. </p>
+
+2. The distribution of stars perpendicular to the plane of the Galaxies changes depending on their luminosity. Younger, more massive and brighter stars are fonud close to the plane, while older, less massive and fainter stars more spread. The observed **scale height** (H) can be modeled by a simple function as a function of M<sub>V</sub>: 
+
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544553954.jpg) (2)
+
+3. The star density variation in the disk (&rho<sub>d</sub>) as a function of z can be approximated by:
+
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544554170.jpg) (3).
+
+4. The star density variation in the disk (&rho<sub>d</sub>) as a function of x can be approximated by:
+
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544555158.jpg) (4)
+   
+   where r<sub>0</sub> is the distance of the Sun for the Galactic Center (r<sub>0</sub> = 8 kpc) and h is the scale lenght that varies with morphological type (h=3.5 kpc, De Vaucouleurs and Pence, [1978](http://adsabs.harvard.edu/abs/1978AJ.....83.1163D)).
+
+
+5. Therefore, **star density variation in the disk*** &rho;<sub>d</sub> is the product of 3. and 4.:
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544555770.jpg) (5).
  
+6. As **star density** for the **spheroidal component**, assuming it is made of stars with M<sub>V</sub> > 6, an expansion accurate for r/r<sub>e</sub>>0.2 is:
+
+   ![image](http://www.sciweavers.org/download/Tex2Img_1544555621.jpg) (6)
+   
+   where b=7.669, C is the normalization constant (taken as 1 for simplicity), r<sub>e</sub> = r<sub>0</sub>/3 (De Vaucouleurs and Buta, [1978](http://adsabs.harvard.edu/abs/1978AJ.....83.1383D)).
+
+7. Including the spheroidal component, the total distribution of stars in the galaxy is given by: 
+   
+ 
+The tool input parameters
+-------------------------
+The input parameters shown in the left of the rappture GUI are:
+    * Minimum (absolute visual) Magnitude (M<sub>MIN</sub>) and Maximum (absolute visual) Magnitude (M<sub>MAX</sub>). These will be used to compute the luminosity function and the scale height.
+    * Single (absolute visual) Magnitude. This is the magnitude for which you want to calculate the density and spatial distribution. 
+    * Npoints (integer). This is the number of points in which you want to divide the coordinate space: longitude (l), latitude (b) and distance from the Sun (R).
+
+ 
+The tool outputs
+---------------
+After you press 'Simulate', the tool will produce six graphs:
+    * The luminosity function, calculated from M<sub>MIN</sub> to M<sub>MAX</sub> using equation (1)
+    * Scale height, calculated from M<sub>MIN</sub> to M<sub>MAX</sub> using equation (2)
+    * &rho;<sub>d</sub><sup>perp</sup> vs. z, calculated using equation (3)
+    * &rho;<sub>d</sub><sup>parall</sup> vs. x, calculated using equation (4)
+    * &rho;<sub>s</sub> vs. r, calculated using equation (5)
+    * 
+The program produces various plots: 1) luminosity function vs M; 2) scale height vs M; 3) vertical density vs. z; 4) horizontal density vs. x; 5) spheroidal density vs. r; 6) optimized z (90% confinement) vs x.
+
+
+
+
+
+ 
+

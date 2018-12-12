@@ -59,12 +59,18 @@ def dens_parall(x):
 def dens_spher(x,z):
     return np.exp(-b0*(r(x,z)/r_e)**(1./4.))/(r(x,z)/r_e)**(7./8.)
 
-def dens(z, M, x):
+def dens1(z, M, x):
     return np.exp(-(z*1.e3)/H(M)-(x-r0)/h)+np.exp(-b0*(r(x,z)/r_e)**(1./4.))/(r(x,z)/r_e)**(7./8.)
+
+def dens0(z, M, x):
+    return np.exp(-(z*1.e3)/H(M)-(x-r0)/h)
 
 #------------FUNCTION TO OPTIMIZE------------------#
 def f1 (z, x, M):
-    return dens(z, M, x) - 0.90
+    return dens1(z, M, x) - 0.90
+def f0 (z, x, M):
+    return dens0(z, M, x) - 0.90
+
 
 
 #-------RAPPTURE-------#
@@ -84,6 +90,7 @@ def main():
     
     io.put('output.curve(result0).about.label','phi(M) vs M',append=0)
     io.put('output.curve(result0).yaxis.label','phi(M)')
+    io.put('output.curve(result0).yaxis.scale','log')
     io.put('output.curve(result0).xaxis.label','M')
 
     io.put('output.curve(result1).about.label','Scale height (H) vs M',append=0)
@@ -93,18 +100,24 @@ def main():
     io.put('output.curve(result2).about.label','Vertical Density vs z',append=0)
     io.put('output.curve(result2).yaxis.label','rho_v')
     io.put('output.curve(result2).xaxis.label','z (kpc)')
+    io.put('output.curve(result2).about.type', 'scatter')
+    io.put('output.curve(result2).yaxis.scale','log')
 
     io.put('output.curve(result3).about.label','Horizontal Density vs. x',append=0)
     io.put('output.curve(result3).yaxis.label','rho_h')
+    io.put('output.curve(result3).about.type', 'scatter')
     io.put('output.curve(result3).xaxis.label','x (kpc)')
+
 
     io.put('output.curve(result4).about.label','Spheroidal Density vs. r',append=0)
     io.put('output.curve(result4).yaxis.label','rho_s')
     io.put('output.curve(result4).xaxis.label','r (kpc)')
+    io.put('output.curve(result4).about.type', 'scatter')
 
     io.put('output.curve(result5).about.label','z vs x',append=0)
-    io.put('output.curve(result5).yaxis.label','z')
-    io.put('output.curve(result5).xaxis.label','x')
+    io.put('output.curve(result5).yaxis.label','z (kpc)')
+    io.put('output.curve(result5).xaxis.label','x (kpc)')
+    io.put('output.curve(result5).about.type', 'scatter')
 
     #plot luminosity fct
     res=[]
@@ -120,11 +133,12 @@ def main():
                'output.curve(result0).component.xy',
                '%g %g\n' % (M_lum[i],res[i]), append=1
               )
+
     #plot scale height
     for i in range(len(M_lum)):
         io.put(
                'output.curve(result1).component.xy',
-               '%g %g\n' % (M_lum[i],H(M[i])), append=1
+               '%g %g\n' % (M_lum[i],H(M_lum[i])), append=1
               )    
     #plot z vs x
     
@@ -142,29 +156,39 @@ def main():
                 for i in range(len(R)):
                     x_use = x(R[i], b[k],l[s])
                     if x_use<8.:
-                       root = optimize.brentq(f1, -zmax, zmax, args=(x(R[i], b[k], l[s]), M[j]))
-                       x_s.append(x(R[i], b[k], l[s]))
-                       y_s.append(dens_perp(z(R[i], b[k]), M[j]))
-                       z_s.append(dens_parall(x(R[i], b[k], l[s])))
-                       r_s.append(r(x(R[i], b[k], l[s]), z(R[i], b[k])))
-                       s_s.append(dens_spher(x(R[i], b[k], l[s]),z(R[i], b[k])))
-                       root_s.append(root)
-    for i in range(x_s):
+                        if M[j]>=6.:
+                           root = optimize.brentq(f1, -zmax, zmax, args=(x(R[i], b[k], l[s]), M[j]))
+                           x_s.append(x(R[i], b[k], l[s]))
+                           y_s.append(dens_perp(z(R[i], b[k]), M[j]))
+                           z_s.append(dens_parall(x(R[i], b[k], l[s])))
+                           r_s.append(r(x(R[i], b[k], l[s]), z(R[i], b[k])))
+                           s_s.append(dens_spher(x(R[i], b[k], l[s]),z(R[i], b[k])))
+                           root_s.append(root)
+                        elif M[j]<6:
+                           root = optimize.brentq(f0, -zmax, zmax, args=(x(R[i], b[k], l[s]), M[j]))
+                           x_s.append(x(R[i], b[k], l[s]))
+                           y_s.append(dens_perp(z(R[i], b[k]), M[j]))
+                           z_s.append(dens_parall(x(R[i], b[k], l[s])))
+                           r_s.append(r(x(R[i], b[k], l[s]), z(R[i], b[k])))
+                           s_s.append(0.)
+                           root_s.append(root)
+
+    for i in range(len(x_s)):
         io.put(
                'output.curve(result2).component.xy',
-               '%g %g\n' % (x_s[i],y_s[i]), append=1
+               '%g %g\n' % (z_s[i],y_s[i]), append=1
               ) 
-    for i in range(x_s):
+    for i in range(len(x_s)):
         io.put(
                'output.curve(result3).component.xy',
                '%g %g\n' % (x_s[i],z_s[i]), append=1
               ) 
-    for i in range(r_s):
+    for i in range(len(r_s)):
         io.put(
                'output.curve(result4).component.xy',
                '%g %g\n' % (r_s[i],s_s[i]), append=1
               ) 
-    for i in range(x_s):
+    for i in range(len(x_s)):
         io.put(
                'output.curve(result5).component.xy',
                '%g %g\n' % (x_s[i],root_s[i]), append=1
