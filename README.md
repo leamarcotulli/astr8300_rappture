@@ -34,8 +34,8 @@ Istructions
 
 Description of the tool
 =========================
-This tool is based on the paper from **Bachall and Soneira** ([1980](http://adsabs.harvard.edu/abs/1980ApJS...44...73B)).
-<p>The goal of this rappture tool is to compute the distribution of stars of absolute magnitude M as a function of their distance from the Galactic Center (x) and their height above the plane (z).</p>
+This tool is based on the paper from **Bachall and Soneira** ([1980](http://adsabs.harvard.edu/abs/1980ApJS...44...73B)). <br />
+The goal of this rappture tool is to compute the distribution of stars of absolute magnitude M as a function of their distance from the Galactic Center (x) and their height above the plane (z).<br />
 Below I will highlight the assumption behind the calculation. For a detailed description of the model, I will refer the user to the actual [1980](http://adsabs.harvard.edu/abs/1980ApJS...44...73B) paper.
 
 The model
