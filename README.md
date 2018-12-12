@@ -66,9 +66,9 @@ The model
 The tool input parameters
 -------------------------
 The input parameters shown in the left of the rappture GUI are:
-    - Minimum (absolute visual) Magnitude (M<sub>MIN</sub>) and Maximum (absolute visual) Magnitude (M<sub>MAX</sub>). These will be used to compute the luminosity function and the scale height.
-    - Single (absolute visual) Magnitude. This is the magnitude for which you want to calculate the density and spatial distribution. 
-    - Npoints (integer). This is the number of points in which you want to divide the coordinate space: longitude (l), latitude (b) and distance from the Sun (R).
+- Minimum (absolute visual) Magnitude (M<sub>MIN</sub>) and Maximum (absolute visual) Magnitude (M<sub>MAX</sub>). These will be used to compute the luminosity function and the scale height.
+- Single (absolute visual) Magnitude. This is the magnitude for which you want to calculate the density and spatial distribution. 
+- Npoints (integer). This is the number of points in which you want to divide the coordinate space: longitude (l), latitude (b) and distance from the Sun (R).
 
  
 The tool outputs
