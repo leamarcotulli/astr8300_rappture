@@ -42,7 +42,7 @@ The model
 -----------
 1. The **luminosity function** of disk stars (which is the number of stars per pc<sup>3</sup> per absolute visual magnitude, M<sub>V</sub>) is taken from the analytic function derived in Tremaine, Ostriker and Spitzer ([1975](http://adsabs.harvard.edu/abs/1975ApJ...196..407T)):
 
-![image](http://www.sciweavers.org/download/Tex2Img_1544553247.jpg) (1)
+![image](https://github.com/leamarcotulli/astr8300_rappture_lea_BS/blob/master/Final_project/lum.jpg) (1)
 
 <p>with n<sub>*</sub>=4.03x10<sup>-3</sup>, M<sup>*</sup>=+1.28, M<sub>b</sub>=-6, M<sub>d</sub>=+19, &alpha;=0.74, &beta;=0.04, 1/&delta;=3.40. </p>
 
