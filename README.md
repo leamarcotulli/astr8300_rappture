@@ -33,15 +33,15 @@ The model
 
 <p>with n<sub>*</sub>=4.03x10<sup>-3</sup>, M<sup>*</sup>=+1.28, M<sub>b</sub>=-6, M<sub>d</sub>=+19, &alpha;=0.74, &beta;=0.04, 1/&delta;=3.40. </p>
 
-2. The distribution of stars perpendicular to the plane of the Galaxies changes depending on their luminosity. Younger, more massive and brighter stars are found close to the plane, while older, less massive and fainter stars are more spread. The observed **scale height** (H) can be modeled by a trivial function which depends on M<sub>V</sub>: 
+2. The distribution of stars perpendicular to the plane of the Galaxies changes depending on their luminosity. Younger, more massive and brighter stars are found close to the plane, while older, less massive and fainter stars are more spread. The observed **scale height** (H) can be modeled by a trivial function which depends on M<sub>V</sub> (and well agrees with the observations): 
 
    ![image](https://github.com/leamarcotulli/astr8300_rappture_lea_BS/blob/master/Final_project/scale.jpg) (2)
 
-3. The star density variation in the disk (&rho<sub>d</sub>) as a function of z can be approximated by:
+3. The star density variation in the disk (&rho;<sub>d</sub>) as a function of z can be approximated by:
 
    ![image](https://github.com/leamarcotulli/astr8300_rappture_lea_BS/blob/master/Final_project/rho_perp.jpg) (3).
 
-4. The star density variation in the disk (&rho<sub>d</sub>) as a function of x can be approximated by:
+4. The star density variation in the disk (&rho;<sub>d</sub>) as a function of x can be approximated by:
 
    ![image](https://github.com/leamarcotulli/astr8300_rappture_lea_BS/blob/master/Final_project/rho_parall.jpg) (4)
    
