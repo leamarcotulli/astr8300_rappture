@@ -12,7 +12,7 @@ Istructions
 You will need a computer with [rappture](https://nanohub.org/infrastructure/rappture/) installed. If you do not have the software, follow the steps below. 
 
 1. Make an account on Amazon AWS
-2. From the EC2 dashboard, click on 'AMIs' and, under the public images, launch the 'webnucleo' one (this instance will have rappture installed.
+2. From the EC2 dashboard, click on 'AMIs' and, under the public images, launch the 'webnucleo' one (this instance will have rappture installed).
 3. Connect to the instance with "ssh -i "/path/to/key.pem" -X ubuntu@..."
    * git clone http://github.com/leamarcotulli/astr8300_rappture_lea_BS.git
    * cd astr8300_rappture/Final_Project
