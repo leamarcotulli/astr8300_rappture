@@ -3,26 +3,13 @@ Overview
 
 astr8300_rappture is a sample package for Astr8300 rappture projects
 
-Installation
-------------
-
-You will need a computer with [rappture](https://nanohub.org/infrastructure/rappture/) installed.  Type the following:
-
-* git clone http://github.com/leamarcotulli/astr8300_rappture_lea_BS.git
-* cd astr8300_rappture
-* rappture
-
-Authors
--------
-
-- Bradley S. Meyer <mbradle@clemson.edu>
-
 Bahcall-Soneira models tool
 ===========================
 This tool has been developed for the **final project** for the *Galactic Astronomy* class, taught by prof. Bradley Meyer in Fall 2018, Clemson University.
 
 Istructions
 ------------
+You will need a computer with [rappture](https://nanohub.org/infrastructure/rappture/) installed. If you do not have the software, follow the steps below. 
 
 1. Make an account on Amazon AWS
 2. From the EC2 dashboard, click on 'AMIs' and, under the public images, launch the 'webnucleo' one (this instance will have rappture installed.
